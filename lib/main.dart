@@ -1,5 +1,6 @@
 import 'package:finance_app/pages/home.dart';
 import 'package:finance_app/pages/statistic.dart';
+import 'package:finance_app/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Statistics(),
+      home: Bottom(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:finance_app/widgets/chart.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -106,9 +107,65 @@ class _StatisticsState extends State<Statistics> {
                         )
                       ],
                     ),
+                  ),
+                  SizedBox(height: 20,),
+                  Chart(),
+                  SizedBox(height: 20,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Top Spending',
+                          style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                        ),
+                        Icon(
+                          Icons.swap_vert,
+                          size: 25,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
+            ),
+            SliverList(delegate: SliverChildBuilderDelegate(
+              (context, index){
+                return ListTile(
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Icon(Icons.money, size: 40,),
+                    ),
+                    title: Text(
+                      'transfer',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600
+                      ),
+                    ),
+                    subtitle: Text(
+                      'today',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600
+                      ),
+                    ),
+                    trailing: Text(
+                      '\$ 56',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 19,
+                        color: Colors.green,
+                      ),
+                    ),
+                  );
+              },
+            childCount: 6,
+            ),
             )
           ],
         )
